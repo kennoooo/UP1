@@ -1,0 +1,21 @@
+﻿<Page x:Class="WpfApp1.Pages.DiagrammPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:wfi="clr-namespace:System.Windows.Forms.Integration;assembly=WindowsFormsIntegration"
+      Title="Диаграммы и отчеты">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel Grid.Row="0" HorizontalAlignment="Center">
+            <ComboBox x:Name="CmbUser" Width="220" DisplayMemberPath="FIO" ToolTip="Выберите пользователя" SelectionChanged="UpdateChart"/>
+            <ComboBox x:Name="CmbType" Width="220" ToolTip="Выберите тип диаграммы" SelectionChanged="UpdateChart"/>
+            <Button x:Name="ButtonWord" Content="Экспорт в Word" ToolTip="Сохранить отчет в форматах .docx и .pdf" Click="ButtonWord_Click"/>
+            <Button x:Name="ButtonExcel" Content="Экспорт в Excel" ToolTip="Сохранить отчет в формате .xlsx" Click="ButtonExcel_Click"/>
+        </WrapPanel>
+
+        <wfi:WindowsFormsHost x:Name="ChartHost" Grid.Row="1" Margin="5"/>
+    </Grid>
+</Page>

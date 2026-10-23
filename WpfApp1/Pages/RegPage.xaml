@@ -1,0 +1,26 @@
+﻿<Page x:Class="WpfApp1.Pages.RegPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Регистрация">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Регистрация" Style="{DynamicResource HeaderText}"/>
+        <Grid>
+            <TextBox x:Name="TBLogin" MaxLength="20" ToolTip="Логин: 3-20 символов, латинские буквы, цифры и знак подчеркивания" TextChanged="TBLogin_TextChanged" PreviewTextInput="TBLogin_PreviewTextInput"/>
+            <TextBlock x:Name="HintLogin" Text="Введите логин" Style="{DynamicResource HintText}"/>
+        </Grid>
+        <Grid>
+            <PasswordBox x:Name="PassFirst" MaxLength="30" ToolTip="Пароль: от 6 символов, латиница, минимум одна цифра" PasswordChanged="PassFirst_PasswordChanged" PreviewTextInput="Pass_PreviewTextInput"/>
+            <TextBlock x:Name="HintPassFirst" Text="Введите пароль" Style="{DynamicResource HintText}"/>
+        </Grid>
+        <Grid>
+            <PasswordBox x:Name="PassSecond" MaxLength="30" ToolTip="Повторите пароль" PasswordChanged="PassSecond_PasswordChanged" PreviewTextInput="Pass_PreviewTextInput"/>
+            <TextBlock x:Name="HintPassSecond" Text="Повторите пароль" Style="{DynamicResource HintText}"/>
+        </Grid>
+        <Grid>
+            <TextBox x:Name="TBFio" MaxLength="100" ToolTip="Фамилия Имя Отчество (2-3 слова, только буквы)" TextChanged="TBFio_TextChanged" PreviewTextInput="TBFio_PreviewTextInput"/>
+            <TextBlock x:Name="HintFio" Text="Введите ФИО" Style="{DynamicResource HintText}"/>
+        </Grid>
+        <ComboBox x:Name="CmbRole" ToolTip="Выберите роль"/>
+        <Button x:Name="ButtonRegister" Content="Зарегистрироваться" ToolTip="Создать учетную запись" Click="ButtonRegister_Click"/>
+    </StackPanel>
+</Page>

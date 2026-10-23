@@ -1,0 +1,13 @@
+﻿<Page x:Class="WpfApp1.Pages.AdminPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Панель администратора">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock x:Name="TextWelcome" Style="{DynamicResource HeaderText}"/>
+        <Button x:Name="BtnTab1" Content="Таблица пользователей" ToolTip="Управление пользователями" Click="BtnTab1_Click"/>
+        <Button x:Name="BtnTab2" Content="Таблица музеев" ToolTip="Управление музеями" Click="BtnTab2_Click"/>
+        <Button x:Name="BtnTab3" Content="Таблица бронирований" ToolTip="Управление бронированиями" Click="BtnTab3_Click"/>
+        <Button x:Name="BtnTab4" Content="Диаграммы и отчеты" ToolTip="Диаграмма и экспорт отчетов" Click="BtnTab4_Click"/>
+        <Button x:Name="BtnLogout" Content="Выйти" ToolTip="Выйти из учетной записи" Click="BtnLogout_Click"/>
+    </StackPanel>
+</Page>

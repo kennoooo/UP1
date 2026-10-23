@@ -1,0 +1,38 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Музеи и выставки"
+        Height="650" Width="1000"
+        MinHeight="600" MinWidth="950"
+        WindowStartupLocation="CenterScreen"
+        FontSize="14"
+        FontFamily="{DynamicResource AppFont}"
+        Background="{DynamicResource BgBrush}"
+        Foreground="{DynamicResource TextBrush}"
+        Loaded="Window_Loaded"
+        Closing="Window_Closing">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="45"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="45"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="{DynamicResource PanelBrush}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="ButtonBack" Grid.Column="0" Content="Назад" ToolTip="Вернуться на предыдущую страницу" IsEnabled="False" Click="ButtonBack_Click"/>
+            <TextBlock x:Name="PageTitle" Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="18" FontWeight="Bold"/>
+            <Button x:Name="ButtonTheme" Grid.Column="2" ToolTip="Сменить тему оформления" Click="ButtonTheme_Click"/>
+        </Grid>
+
+        <Frame x:Name="MainFrame" Grid.Row="1" NavigationUIVisibility="Hidden" LoadCompleted="MainFrame_LoadCompleted"/>
+
+        <Grid Grid.Row="2" Background="{DynamicResource PanelBrush}">
+            <TextBlock x:Name="DateTimeNow" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,15,0"/>
+        </Grid>
+    </Grid>
+</Window>

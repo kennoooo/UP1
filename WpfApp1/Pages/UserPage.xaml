@@ -1,0 +1,38 @@
+﻿<Page x:Class="WpfApp1.Pages.UserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Мои бронирования">
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <TextBlock x:Name="TextWelcome" Grid.Row="0" Style="{DynamicResource HeaderText}"/>
+
+        <WrapPanel Grid.Row="1" HorizontalAlignment="Center">
+            <Grid>
+                <TextBox x:Name="SearchBox" Width="220" MaxLength="100" ToolTip="Поиск по названию выставки" TextChanged="SearchBox_TextChanged"/>
+                <TextBlock x:Name="HintSearch" Text="Поиск по выставке" Style="{DynamicResource HintText}"/>
+            </Grid>
+            <ComboBox x:Name="CmbMuseum" Width="220" DisplayMemberPath="Name" ToolTip="Фильтр по музею" SelectionChanged="Filter_SelectionChanged"/>
+            <ComboBox x:Name="CmbSort" Width="220" ToolTip="Сортировка" SelectionChanged="Filter_SelectionChanged"/>
+            <Button x:Name="ButtonClear" Content="Очистить фильтр" ToolTip="Сбросить поиск, фильтр и сортировку" Click="ButtonClear_Click"/>
+        </WrapPanel>
+
+        <DataGrid x:Name="DataGridBookings" Grid.Row="2" AutoGenerateColumns="False">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Дата" Binding="{Binding Date, StringFormat=dd.MM.yyyy}" Width="100"/>
+                <DataGridTextColumn Header="Музей" Binding="{Binding Museums.Name}" Width="*"/>
+                <DataGridTextColumn Header="Выставка" Binding="{Binding Name}" Width="*"/>
+                <DataGridTextColumn Header="Билетов" Binding="{Binding Num}" Width="90"/>
+                <DataGridTextColumn Header="Цена, руб." Binding="{Binding Price, StringFormat=N2}" Width="110"/>
+                <DataGridTextColumn Header="Сумма, руб." Binding="{Binding Total, StringFormat=N2}" Width="120"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <Button x:Name="ButtonLogout" Grid.Row="3" Content="Выйти" HorizontalAlignment="Right" ToolTip="Выйти из учетной записи" Click="ButtonLogout_Click"/>
+    </Grid>
+</Page>

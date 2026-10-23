@@ -1,0 +1,44 @@
+﻿<Page x:Class="WpfApp1.Pages.AddBookingPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Бронирование">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock x:Name="TextHeader" Style="{DynamicResource HeaderText}"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Пользователь" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox x:Name="CmbUser" Grid.Row="0" Grid.Column="1" DisplayMemberPath="FIO" SelectedValuePath="ID" ToolTip="Выберите пользователя"/>
+
+            <TextBlock Grid.Row="1" Grid.Column="0" Text="Музей" VerticalAlignment="Center" Margin="5"/>
+            <ComboBox x:Name="CmbMuseum" Grid.Row="1" Grid.Column="1" DisplayMemberPath="Name" SelectedValuePath="ID" ToolTip="Выберите музей"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Выставка" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="TBName" Grid.Row="2" Grid.Column="1" MaxLength="100" ToolTip="Название выставки или экспозиции (от 2 до 100 символов)"/>
+
+            <TextBlock Grid.Row="3" Grid.Column="0" Text="Дата посещения" VerticalAlignment="Center" Margin="5"/>
+            <DatePicker x:Name="DPDate" Grid.Row="3" Grid.Column="1" ToolTip="Выберите дату посещения"/>
+
+            <TextBlock Grid.Row="4" Grid.Column="0" Text="Билетов (1-10)" VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="TBNum" Grid.Row="4" Grid.Column="1" MaxLength="2" ToolTip="Количество билетов: от 1 до 10" PreviewTextInput="Digits_PreviewTextInput"/>
+
+            <TextBlock Grid.Row="5" Grid.Column="0" Text="Цена билета, руб." VerticalAlignment="Center" Margin="5"/>
+            <TextBox x:Name="TBPrice" Grid.Row="5" Grid.Column="1" MaxLength="6" ToolTip="Цена одного билета в рублях: от 1 до 100000" PreviewTextInput="Digits_PreviewTextInput"/>
+        </Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,10,0,0">
+            <Button x:Name="ButtonSave" Content="Сохранить" ToolTip="Сохранить данные" Click="ButtonSave_Click"/>
+            <Button x:Name="ButtonClean" Content="Очистить" ToolTip="Очистить поля формы" Click="ButtonClean_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Page>

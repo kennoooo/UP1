@@ -1,0 +1,25 @@
+﻿<Page x:Class="WpfApp1.Pages.ChangePassPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      Title="Смена пароля">
+    <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+        <TextBlock Text="Смена пароля" Style="{DynamicResource HeaderText}"/>
+        <Grid>
+            <TextBox x:Name="TBLogin" MaxLength="20" ToolTip="Введите ваш логин" TextChanged="TBLogin_TextChanged" PreviewTextInput="TBLogin_PreviewTextInput"/>
+            <TextBlock x:Name="HintLogin" Text="Введите логин" Style="{DynamicResource HintText}"/>
+        </Grid>
+        <Grid>
+            <PasswordBox x:Name="PassOld" MaxLength="30" ToolTip="Введите текущий пароль" PasswordChanged="PassOld_PasswordChanged" PreviewTextInput="Pass_PreviewTextInput"/>
+            <TextBlock x:Name="HintPassOld" Text="Текущий пароль" Style="{DynamicResource HintText}"/>
+        </Grid>
+        <Grid>
+            <PasswordBox x:Name="PassNew" MaxLength="30" ToolTip="Новый пароль: от 6 символов, латиница, минимум одна цифра" PasswordChanged="PassNew_PasswordChanged" PreviewTextInput="Pass_PreviewTextInput"/>
+            <TextBlock x:Name="HintPassNew" Text="Новый пароль" Style="{DynamicResource HintText}"/>
+        </Grid>
+        <Grid>
+            <PasswordBox x:Name="PassConfirm" MaxLength="30" ToolTip="Повторите новый пароль" PasswordChanged="PassConfirm_PasswordChanged" PreviewTextInput="Pass_PreviewTextInput"/>
+            <TextBlock x:Name="HintPassConfirm" Text="Повторите новый пароль" Style="{DynamicResource HintText}"/>
+        </Grid>
+        <Button x:Name="ButtonSave" Content="Сменить пароль" ToolTip="Сохранить новый пароль" Click="ButtonSave_Click"/>
+    </StackPanel>
+</Page>
