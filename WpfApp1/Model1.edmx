@@ -145,7 +145,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="MuseumTicketsDBEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="MuseumTicketsDBEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Bookings" EntityType="Self.Bookings" />
           <EntitySet Name="Museums" EntityType="Self.Museums" />
           <EntitySet Name="Users" EntityType="Self.Users" />
@@ -163,7 +163,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище MuseumTicketsDBModelContainer" CdmEntityContainer="MuseumTicketsDBEntities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище MuseumTicketsDBModelContainer" CdmEntityContainer="MuseumTicketsDBEntities1">
           <EntitySetMapping Name="Bookings">
             <EntityTypeMapping TypeName="MuseumTicketsDBModel.Bookings">
               <MappingFragment StoreEntitySet="Bookings">

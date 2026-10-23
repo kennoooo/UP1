@@ -13,10 +13,10 @@ namespace WpfApp1
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class MuseumTicketsDBEntities : DbContext
+    public partial class MuseumTicketsDBEntities1 : DbContext
     {
-        public MuseumTicketsDBEntities()
-            : base("name=MuseumTicketsDBEntities")
+        public MuseumTicketsDBEntities1()
+            : base("name=MuseumTicketsDBEntities1")
         {
         }
     
